@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/index.css">
+
+  <script src="assets/vendor/jquery.min.js"></script>
+  <script src="assets/vendor/jsencrypt.min.js"></script>
+  <script src="assets/vendor/lodash/lodash.js"></script>
+
+  <script src="assets/js/shapemanager/webRTCadapter.js"></script>
+  <script src="assets/js/shapemanager/knockout-3.3.0.js"></script>
+  <script src="assets/js/shapemanager/raphael.js"></script>
+  <script src="assets/js/shapemanager/ShapeManager-0.9.js"></script>
+  <script src="assets/js/shapemanager/DrillEditor-0.9.1.js"></script>
+  <script src="assets/js/shapemanager/drawingEngine.js"></script>
+  <script src="assets/js/shapemanager/rgbcolor.js"></script>
+
+
+  <script type="text/javascript" src="assets/js/api.service.js"></script>
+  <script type="text/javascript" src="assets/js/auth.service.js"></script>
+  <script type="text/javascript" src="assets/js/shapemanager.service.js"></script>
+</head>
+
+<body>
+  <div class="loading">
+    <img src="assets/images/loading-essilor.gif">
+  </div>
+  <div class="nav">
+    <ul class="nav__bar">
+      <li class="nav__title nav__item">
+        Shape design tool
+      </li>
+      <li id="standard" class="nav__item">
+        Standard
+        <div class="nav__options nav__options--shapes lens-shape">
+          <ul id="standard-shapes" class="lens-shape__wrapper"></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="shape-manager">
+    <div class="shape-manager__wrapper">
+      <div class="shape-manager__tools">
+        <ul id="view-menu" class="view-menu" style="display: none;">
+          <!-- <li>
+            <a id="btnDrill" class="view-menu__item need-data" style="display: none;">
+              <img src="assets/images/shapemanager/misc/DrillTool_32.png" />
+            </a>
+          </li>
+          <li>
+            <a id="btnOneToOne" class="view-menu__item need-data" style="display: none;">
+              <img src="assets/images/shapemanager/misc/1_1_32.png" />
+            </a>
+          </li> -->
+          <li>
+            <a id="btnShapeRight" class="view-menu__item" style="display: none;">
+              <img src="assets/images/shapemanager/misc/LensR_32.png" />
+            </a>
+          </li>
+          <li>
+            <a id="btnShapeBoth" class="view-menu__item">
+              <img src="assets/images/shapemanager/misc/LensB_32.png" />
+            </a>
+          </li>
+          <li>
+            <a id="btnShapeLeft" class="view-menu__item" style="display: none;">
+              <img src="assets/images/shapemanager/misc/LensL_32.png" />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="shape-manager__container">
+        <div id="shape-info" class="shape-manager__info" style="display: none;">
+          <label>
+            SOURCE TYPE: Standard <span id="std-number"></span>
+          </label>
+          <label>
+            SHAPE QUALITY: <span id="shape-quality"></span>
+          </label>
+        </div>
+        <div class="workbench" style="height:418px">
+          <div class="shape-cotes">
+            <span class="dbox shape-cotes__dbox" style="display: none;">
+              <label></label>
+            </span>
+            <span class="vbox shape-cotes__vbox shape-cotes__vbox--left" style="display: none;">
+              <label></label>
+              <i class="fa fa-arrows-c fa-lg"></i>
+            </span>
+            <span class="vbox shape-cotes__vbox shape-cotes__vbox--right" style="display: none;">
+              <i class="fa fa-arrows-c fa-lg"></i>
+              <label></label>
+            </span>
+            <span class="hbox shape-cotes__hbox shape-cotes__hbox--left">
+              <label></label>
+            </span>
+            <span class="hbox shape-cotes__hbox shape-cotes__hbox--right">
+              <label></label>
+            </span>
+          </div>
+          <div id="ShapeCanvas" class="shape-canvas"></div>
+        </div>
+
+        <div id="shape-editor" class="shape-manager__editor" style="display: none;">
+          <div id="hbox" class="input-item" style="display: none;">
+            <label>HBOX</label>
+            <input size="4" id="hboxEdit" type="number" onblur="propertyChanged('hbox')" />
+          </div>
+          <div class="input-item">
+            <label>VBOX</label>
+            <input size="4" id="vboxEdit" type="number" onblur="propertyChanged('vbox')" />
+          </div>
+          <div class="input-item">
+            <label>DBL</label>
+            <input size="4" id="dblEdit" type="number" onblur="propertyChanged('dbox')" />
+          </div>
+          <div class="input-item">
+            <label>Frame Type</label>
+            <select id="frameTypeSelect" style="min-width:80px"></select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="assets/index.js"></script>
+</body>
+
+</html>

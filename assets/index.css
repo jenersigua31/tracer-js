@@ -1,0 +1,261 @@
+body {
+  color: #7f8c97;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 999;
+}
+
+.loading img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nav {
+  color: #5e5e5e;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 15%), 0 1px 5px rgb(0 0 0 / 8%);
+}
+
+.nav__bar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background-image: linear-gradient(to bottom, #fff 0%, #f8f8f8 100%);
+  list-style: none;
+  margin: 0;
+  font-size: 18px;
+}
+
+.nav__title {
+  flex: 1;
+}
+
+.nav__item {
+  cursor: pointer;
+  padding: 10px 20px;
+  user-select: none;
+}
+
+.nav__options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 1;
+}
+
+.nav__options--shapes {
+  left: 30%;
+}
+
+.nav__item:hover {
+  color: #333;
+}
+
+.nav__item--active {
+  color: #555;
+  background-color: #e7e7e7;
+}
+
+.nav__item--active .nav__options {
+  display: block;
+}
+
+.lens-shape {
+  padding: 20px 30px;
+  box-shadow: 0px 3px 12px -5px rgb(0 0 0 / 35%);
+}
+
+.lens-shape__wrapper {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.lens-shape__wrapper li {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.lens-shape__wrapper .lens-shape__image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border 0.2s ease-in-out;
+}
+
+.lens-shape__wrapper .lens-shape__image:hover {
+  border-color: #337ab7;
+}
+
+.lens-shape__wrapper .lens-shape__image img {
+  width: 100%;
+}
+
+.shape-manager {
+  padding: 20px 10px;
+}
+
+.shape-manager__wrapper {
+  display: flex;
+}
+
+.shape-manager__tools {
+  width: 85px;
+  margin-right: 80px;
+}
+
+.shape-manager__tools .view-menu {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+  border: 2px solid white;
+  background-color: rgb(252, 252, 252);
+  box-sizing: border-box;
+}
+
+.shape-manager__tools .view-menu__item {
+  display: inline-block;
+  cursor: pointer;
+  background-image: none, linear-gradient(to bottom, rgba(255, 255, 255, 0.6) 0, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+}
+
+.shape-manager__tools .view-menu__item:hover {
+  background-image: none, linear-gradient(to bottom, rgba(255, 255, 255, 0.4) 0, rgba(255, 255, 255, 0) 100%);
+}
+
+.shape-manager__tools .view-menu__item.selected {
+  color: #fff;
+  background-color: #e1e1e1;
+  border-color: #6e747e;
+}
+
+.shape-manager__container {
+  flex: 1;
+}
+
+.shape-manager__info {
+  text-align: right;
+}
+
+.shape-manager__info label {
+  padding: 4px 10px 2px 10px;
+  color: #ffffff;
+  background-color: #57bfe1;
+  font-weight: 400;
+  font-size: 16px;
+  display: inline-block;
+}
+
+.workbench {
+  position: relative;
+}
+
+.shape-manager__container .shape-cotes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.shape-manager__container .shape-cotes label {
+  font-size: 17px;
+  font-weight: bold;
+}
+.shape-manager__container .shape-cotes__dbox {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.shape-manager__container .shape-cotes__hbox {
+  position: absolute;
+  bottom: 0;
+}
+
+.shape-manager__container .shape-cotes__hbox--left,
+.shape-manager__container .shape-cotes__hbox--right {
+  text-align: center;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.shape-manager__container .shape-cotes__hbox--left {
+  padding-left: 14%;
+}
+
+.shape-manager__container .shape-cotes__hbox--right {
+  padding-right: 12%;
+}
+
+.shape-manager__container .shape-cotes__vbox {
+  position: absolute;
+  top: 160px;
+}
+
+.shape-manager__container .shape-cotes__vbox--left,
+.shape-manager__container .shape-cotes__hbox--left {
+  left: 0;
+}
+
+.shape-manager__container .shape-cotes__vbox--right,
+.shape-manager__container .shape-cotes__hbox--right {
+  right: 0;
+}
+
+.shape-manager__container .shape-canvas {
+  box-sizing: border-box;
+  max-height: 390px;
+  margin-left: 13%;
+  margin-right: 13%;
+  padding-bottom: 3%;
+}
+
+.shape-manager__editor {
+  display: flex;
+  margin-top: 50px;
+  border: 1px solid #eeeeee;
+  background-color: rgb(252, 252, 252);
+  margin-bottom: 10px;
+  min-width: 400px;
+  padding: 10px;
+}
+
+.shape-manager__editor .input-item {
+  margin-right: 8px;
+  box-sizing: border-box;
+}
+
+.shape-manager__editor .input-item label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.shape-manager__editor .input-item input {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+.shape-manager__editor select {
+  height: 30px;
+  line-height: 30px;
+}
